@@ -7,6 +7,6 @@ const settingsController = new SettingController()
 const usersController = new UsersController()
 
 routes.post("/settings", settingsController.create)
-routes.post("/users", settingsController.create)
+routes.post("/users", usersController.create)
 
 export { routes }
