@@ -25,7 +25,7 @@ class SettingsService {
     })
 
     await settingsRepository.save(settings)
-
+    return settings
   }
 }
 
