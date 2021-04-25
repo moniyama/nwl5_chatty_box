@@ -74,3 +74,7 @@ const sendMessage = (id) => {
   divMessages.appendChild(createDiv)
   text.value = ""
 }
+
+socket.on("admin_receive_message", data => {
+  console.log(data)
+})
