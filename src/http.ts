@@ -23,6 +23,10 @@ app.get("/pages/client", (req, res) => {
   return res.render('html/client.html')
 })
 
+app.get("/pages/admin", (req, res) => {
+  return res.render('html/admin.html')
+})
+
 const httpServer = createServer(app)
 const io = new Server(httpServer);
 
