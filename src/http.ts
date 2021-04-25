@@ -28,7 +28,6 @@ const io = new Server(httpServer);
 
 io.on("connection", (socket: Socket) => {
   // ...
-  console.log('entrouu')
 });
 
 app.use(express.json())
