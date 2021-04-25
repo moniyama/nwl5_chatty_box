@@ -17,7 +17,7 @@ class SettingController {
     }
   }
 
-  async findByUsername(req: Request, res: Response){
+  async findByUsername(req: Request, res: Response) {
     const { username } = req.params
 
     const settingsService = new SettingsService()
@@ -25,7 +25,7 @@ class SettingController {
     return res.json(settings)
   }
 
-  async update(req: Request, res: Response){
+  async update(req: Request, res: Response) {
     const { username } = req.params
     const { chat } = req.body
 

@@ -14,9 +14,9 @@ io.on("connect", (socket) => {
   const messagesService = new MessagesService()
 
   socket.on("client_first_access", async (params) => {
+    let user_id = null
     const { email, text } = params as IParams
     const socket_id = socket.id
-    let user_id = null
 
     const userExist = await usersService.findByEmail(email);
     if (!userExist) {
@@ -25,13 +25,10 @@ io.on("connect", (socket) => {
         socket_id,
         user_id: user.id
       })
-
       user_id = user.id
-
     } else {
       user_id = userExist.id
       const connection = await connectionsService.findByUserId(userExist.id)
-
       if (!connection) {
         await connectionsService.create({
           socket_id,
@@ -52,12 +49,11 @@ io.on("connect", (socket) => {
 
     const allUsers = await connectionsService.findAllWithoutAdmin()
     io.emit("admin_list_all_users", allUsers)
-
   })
 
   socket.on("client_send_to_admin", async (params) => {
-    const { text, socket_admin_id } = params
     const socket_id = socket.id
+    const { text, socket_admin_id } = params
     const { user_id } = await connectionsService.findBySocketID(socket_id)
     const message = await messagesService.create({
       text,

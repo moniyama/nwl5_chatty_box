@@ -14,7 +14,6 @@ class MessagesController {
         text,
         user_id
       })
-
       return res.json(message)
     } catch (error) {
       return res.status(400).json({
@@ -26,7 +25,6 @@ class MessagesController {
   async showByUser(req: Request, res: Response) {
     const { id } = req.params
     const messagesService = new MessagesService()
-
     const list = await messagesService.listByUser(id)
     return res.json(list)
   }

@@ -31,7 +31,6 @@ class Connection {
       this.id = uuid()
     }
   }
-
 }
 
 export { Connection }

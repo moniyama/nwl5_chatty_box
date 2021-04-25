@@ -7,22 +7,16 @@ import { Server, Socket } from "socket.io";
 import path from "path"
 
 const app = express();
+app.use(express.json())
 
-// https://expressjs.com/en/starter/static-files.html
-app.use(express.static(path.join(__dirname, '..', 'public')))
-
-// //http://expressjs.com/en/5x/api.html#app.set
-app.set("views", path.join(__dirname, '..', 'public'))
-
-// //http://expressjs.com/en/5x/api.html#app.engine
-app.engine('html', require('ejs').renderFile)
-
+app.use(express.static(path.join(__dirname, '..', 'public'))) // https://expressjs.com/en/starter/static-files.html
+app.set("views", path.join(__dirname, '..', 'public')) // http://expressjs.com/en/5x/api.html#app.set
+app.engine('html', require('ejs').renderFile)  // http://expressjs.com/en/5x/api.html#app.engine
 app.set("view engine", "html")
 
 app.get("/pages/client", (req, res) => {
   return res.render('html/client.html')
 })
-
 app.get("/pages/admin", (req, res) => {
   return res.render('html/admin.html')
 })
@@ -30,11 +24,7 @@ app.get("/pages/admin", (req, res) => {
 const httpServer = createServer(app)
 const io = new Server(httpServer);
 
-io.on("connection", (socket: Socket) => {
-  // ...
-});
-
-app.use(express.json())
+io.on("connection", (socket: Socket) => { });
 
 app.use(routes)
 

@@ -28,7 +28,6 @@ class Message {
       this.id = uuid()
     }
   }
-
 }
 
 export { Message }
