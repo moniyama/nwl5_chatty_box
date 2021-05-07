@@ -18,8 +18,8 @@ socket.on("admin_list_all_users", (connections) => {
 })
 
 const call = (id) => {
-  connectionInSupport.push(connection);
   const connection = connectionsUsers.find(connection => connection.socket_id === id)
+  connectionInSupport.push(connection);
   const template = document.getElementById("admin_template").innerHTML
 
   const rendered = Mustache.render(template, {
