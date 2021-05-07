@@ -42,8 +42,8 @@ Os novos atendimentos são visualizados no inicio da página, e assim, podem ini
 
 #### Roadmap
 
-- [] Iniciar um novo atendimento, caso o usuario já tenha um cadastro
-- [] Funcionalidade para encerrar o atendimento/chat
-- [] Cadastro para admin, com histórico de atendimentos
-- [] Restrição para admin iniciar apenas um atendimento por vez
-- [] Restrição para client iniciar chat apenas com as informações necessárias
+- [ ] Iniciar um novo atendimento, caso o usuario já tenha um cadastro
+- [ ] Funcionalidade para encerrar o atendimento/chat
+- [ ] Cadastro para admin, com histórico de atendimentos
+- [ ] Restrição para admin iniciar apenas um atendimento por vez
+- [ ] Restrição para client iniciar chat apenas com as informações necessárias
